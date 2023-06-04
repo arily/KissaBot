@@ -1,1 +1,1 @@
-ihsiok.log("world")
+kissa.log("hello world")
