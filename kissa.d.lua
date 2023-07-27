@@ -1,5 +1,5 @@
 ---@meta kissa
 kissa = {}
 ---@param content string
-function kissa.log(content)
+function kissa.print(content)
 end

@@ -6,4 +6,4 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-ezlua = "0.3.1"
+rlua = { version = "^0.19.7", features=["system-luajit"], default-features = false }
