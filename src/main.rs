@@ -1,6 +1,3 @@
-pub mod kissacore;
-
-use kissacore::userdata::*;
 use mlua::prelude::*;
 use std::fs;
 
@@ -15,13 +12,11 @@ fn main() -> LuaResult<()> {
     t_kissa.set("print", f_print)?;
     lua.globals().set("kissa", t_kissa)?;
 
-    let f_createeventnode =
-        lua.create_function(|lua, name: String| Ok(lua.create_userdata(KissaEventNode::new(name))?))?;
-    lua.globals().set("EventNode", f_createeventnode)?;
+    kissa_core_event::apply(&lua)?;
 
-    lua.load(fs::read("./init.lua").expect("init.lua消失了？"))
+    lua.load(fs::read("./lua/init.lua").expect("main.lua消失了？"))
         .exec()?;
-    lua.load(fs::read("./main.lua").expect("main.lua消失了？"))
+    lua.load(fs::read("./lua/main.lua").expect("main.lua消失了？"))
         .exec()?;
 
     return Ok(());
