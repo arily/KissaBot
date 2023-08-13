@@ -1,5 +1,4 @@
-# core
-## KissaBot の心臓
+# KissaBot
 
 新しいロボットフレーム
 
