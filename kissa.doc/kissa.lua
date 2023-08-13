@@ -13,7 +13,8 @@ function EventNode(name) end
 EventNode = {}
 ---调用该Event节点的所有函数
 ---@param self EventNode
-EventNode.invoke = function(self) end
+---@param param table
+EventNode.invoke = function(self,param) end
 ---增加一个函数监听该Event
 ---@param self EventNode
 ---@param func function(listener)

@@ -41,28 +41,30 @@ impl LuaUserData for KissaEventNode {
                     _ => panic!("listeners? no!"),
                 };
                 list.raw_insert(list.raw_len() + 1, fun)?;
-                let len = list.raw_len();
-                println!("{}", len);
                 Ok(())
             },
         );
-        methods.add_function("invoke", |lua, this: LuaAnyUserData| {
-            let list = this.user_value::<LuaValue>()?;
-            let list = match list {
-                LuaNil => {
-                    let new_list = lua.create_table()?;
-                    let list = new_list.clone();
-                    this.set_user_value(new_list)?;
-                    list
+        methods.add_function(
+            "invoke",
+            |lua, (this, param): (LuaAnyUserData, LuaTable)| {
+                let list = this.user_value::<LuaValue>()?;
+                let list = match list {
+                    LuaNil => {
+                        let new_list = lua.create_table()?;
+                        let list = new_list.clone();
+                        this.set_user_value(new_list)?;
+                        list
+                    }
+                    LuaValue::Table(t) => t,
+                    _ => panic!("listeners? no!"),
+                };
+                for v in list.pairs::<usize, LuaFunction>() {
+                    let (_, v) = v?;
+                    v.call::<LuaTable, _>(param.clone())?;
                 }
-                LuaValue::Table(t) => t,
-                _ => panic!("listeners? no!"),
-            };
-            for v in list.pairs::<usize, LuaFunction>() {
-                v?.1.call::<_, ()>(())?;
-            }
-            Ok(())
-        });
+                Ok(())
+            },
+        );
     }
 }
 impl KissaEventNode {

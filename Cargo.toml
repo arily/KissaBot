@@ -1,5 +1,5 @@
 [package]
-name = "ihsiok"
+name = "kissa-core"
 version = "0.1.0"
 edition = "2021"
 

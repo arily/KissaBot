@@ -1,16 +1,15 @@
 console.log("hello world")
-print("hello lua")
 console.log(_VERSION)
-console.log("bye")
 
 local hello = EventNode("hello")
 
-hello:addlistener(function ()
-  console.log("hello event1")
+hello:addlistener(function(args)
+  local a, b = unpack(args)
+  console.log("Event1", a + b)
 end)
 
-hello:addlistener(function ()
-  console.log("hello event2")
+hello:addlistener(function(args)
+  console.log("Event2", unpack(args))
 end)
 
-hello:invoke()
+hello:invoke({ 1, 2, 3 })
