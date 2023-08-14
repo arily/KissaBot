@@ -26,7 +26,7 @@ macro_rules! plugin_apply{
 
     for name in dependencies {
         if name.starts_with("kissa-plugin-") || name.starts_with("kissa-core") {
-            apply_str.push_str(&format!("{}::apply(&$lua)?;\n       ", name.replace("-", "_")));
+            apply_str.push_str(&format!("{}::apply(&$lua)?;\n        ", name.replace("-", "_")));
         }
     }
     let temp = temp.replace("/* compiler add 'plugin::apply()?;' */", &apply_str.trim());

@@ -2,6 +2,7 @@
 #[macro_export]
 macro_rules! plugin_apply{
     ($lua:expr)=>{
+        kissa_core_console::apply(&$lua)?;
         kissa_core_event::apply(&$lua)?;
     }
 }
