@@ -1,3 +1,6 @@
+#[macro_use]
+mod kissa_plugin;
+
 use mlua::prelude::*;
 use std::fs;
 
@@ -12,7 +15,7 @@ fn main() -> LuaResult<()> {
     t_kissa.set("print", f_print)?;
     lua.globals().set("kissa", t_kissa)?;
 
-    kissa_core_event::apply(&lua)?;
+    plugin_apply!(&lua);
 
     lua.load(fs::read("./lua/init.lua").expect("main.lua消失了？"))
         .exec()?;
