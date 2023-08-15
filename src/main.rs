@@ -14,5 +14,5 @@ fn main() -> LuaResult<()> {
     lua.load(fs::read("./lua/main.lua").expect("main.lua消失了？"))
         .exec()?;
 
-    return Ok(());
+    Ok(())
 }
