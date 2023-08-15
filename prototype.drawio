@@ -145,7 +145,7 @@
                 <mxCell id="82" value="太单一了，让我们扒开事件的外衣，看看内在" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="37.5" y="1190" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="83" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="83" value="事件" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="37.5" y="1260" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="84" value="" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;rotation=-180;base=49;size=30;position=0.94;position2=1;" vertex="1" parent="1">
