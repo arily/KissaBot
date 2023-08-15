@@ -203,7 +203,7 @@
                     <mxGeometry x="70" y="1650" width="660" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="102" value="这样的结构被称作“链”" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="1710" width="150" height="30" as="geometry"/>
+                    <mxGeometry x="70" y="1690" width="150" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="103" value="被动事件池" style="rounded=1;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" vertex="1" parent="1">
                     <mxGeometry x="192.5" y="1910" width="105" height="130" as="geometry"/>
@@ -255,6 +255,12 @@
                 </mxCell>
                 <mxCell id="117" value="... ... ..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="215" y="2000" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="“人”被称为“节点”" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="1690" width="125" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="每个人可以有多个关注者（监听器）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="397.5" y="1690" width="222.5" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
