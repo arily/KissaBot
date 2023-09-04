@@ -5,9 +5,10 @@ use std::time::Duration;
 fn main() {
     let mut reload_handler = DynamicReload::new(
         Some(vec![
-            "./plugins/test_ipc_handler/target/debug",
+            "./plugins/test_ipc_events/target/debug",
             "./plugins/test_ipc_publish/target/debug",
             "./plugins/test_clashed_publish/target/debug",
+            "./plugins/test_ipc_handler/target/debug",
         ]),
         Some("./"),
         dynamic_reload::Search::Default,

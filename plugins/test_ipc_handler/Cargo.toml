@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 kissa = { path = "../../kissa" }
-test_ipc_publish = { path = "../test_ipc_publish" }
+test_ipc_events = { path = "../test_ipc_events" }
 
 [lib]
 crate-type = ["dylib"]

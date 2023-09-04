@@ -1,13 +1,9 @@
 use kissa::{EventType, KissaPlugin};
 
+extern crate test_ipc_events;
+
 #[derive(Default, Debug)]
 struct TestIPCPub;
-
-pub enum CustomEvents {
-    CustomEvent1,
-    CustomEvent2(&'static str), // Change the lifetime to 'static
-    CustomEvent3(&'static str, &'static str, &'static str), // Also change here
-}
 
 impl KissaPlugin for TestIPCPub {
     fn name(&self) -> &'static str {
@@ -17,7 +13,9 @@ impl KissaPlugin for TestIPCPub {
     fn load(&self) -> Vec<EventType> {
         vec![EventType::Unknown(
             self.name(),
-            Box::new(CustomEvents::CustomEvent2("hello from publisher!!")), // Corrected
+            Box::new(test_ipc_events::CustomEvents::CustomEvent2(
+                "hello from publisher!!",
+            )), // Corrected
         )]
     }
 
