@@ -1,0 +1,13 @@
+[package]
+name = "test_ipc_handler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+kissa = { path = "../../kissa" }
+test_ipc_publish = { path = "../test_ipc_publish" }
+
+[lib]
+crate-type = ["dylib"]

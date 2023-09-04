@@ -1,6 +1,7 @@
 {
   "rust-analyzer.linkedProjects": [
-    "./test_plugin/Cargo.toml",
-    "./Cargo.toml"
+    "./Cargo.toml",
+    "./plugins/test_ipc_publish/Cargo.toml",
+    "./plugins/test_ipc_handler/Cargo.toml",
   ]
 }
