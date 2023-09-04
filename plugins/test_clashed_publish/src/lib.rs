@@ -4,7 +4,8 @@ use kissa::{EventType, KissaPlugin};
 struct TestIPCPub;
 
 pub enum ClashedEvent {
-    ClashedEvent(&'static str), // Change the lifetime to 'static
+    ClashedEvent,
+    ClashedEvent2(&'static str), // Change the lifetime to 'static
 }
 
 impl KissaPlugin for TestIPCPub {
@@ -15,7 +16,7 @@ impl KissaPlugin for TestIPCPub {
     fn load(&self) -> Vec<EventType> {
         vec![EventType::Unknown(
             self.name(),
-            Box::new(ClashedEvent::ClashedEvent("hello from clashed!!")), // Corrected
+            Box::new(ClashedEvent::ClashedEvent2("hello from clashed!!")), // Corrected
         )]
     }
 
